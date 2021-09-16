@@ -19,7 +19,7 @@ import './TaskDetails.css'
             </div>
             <div className="task-details-container">
                 <h2>{params.taskTitle}</h2>
-                <p>{params.taskTitle}</p>
+                <p>{params.taskDescription}</p>
             </div>
          </>
       );

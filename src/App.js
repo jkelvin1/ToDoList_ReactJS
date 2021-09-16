@@ -15,7 +15,7 @@ const App =()=>{
 
   useEffect(() => {
     const fetchTasks = async () => {
-      const { data } = await axios.get('https://jsonplaceholder.cypress.io/todos?_limit=10')
+      const { data } = await axios.get('https://projetonode.jkelvin1.repl.co/todos?_limit=10')
       setTasks(data)
     }
 
@@ -38,6 +38,7 @@ const App =()=>{
       title: taskTitle,
       id: uuidv4(),
       completed: false,
+      description: '',
       },
     ];
     setTasks(newTasks);
