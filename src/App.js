@@ -17,6 +17,7 @@ const App =()=>{
     const fetchTasks = async () => {
       const { data } = await axios.get('https://projetonode.jkelvin1.repl.co/todos?_limit=10')
       setTasks(data)
+      localStorage.setItem('Tasks', JSON.stringify(data))
     }
 
     fetchTasks()
@@ -42,13 +43,14 @@ const App =()=>{
       },
     ];
     setTasks(newTasks);
+    localStorage.setItem('Tasks', JSON.stringify(newTasks))
   }
 
   const handleTaskDeletion = (taskID) => {
     const newTasks = tasks.filter(task => task.id !== taskID)
 
     setTasks(newTasks)
-    
+    localStorage.setItem('Tasks', JSON.stringify(newTasks))
   }
 
   return(
@@ -79,6 +81,5 @@ const App =()=>{
     
   )
 }
-
 
 export default App;

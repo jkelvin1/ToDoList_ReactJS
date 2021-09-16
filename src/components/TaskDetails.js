@@ -8,6 +8,9 @@ import './TaskDetails.css'
  const TaskDetails = () => {
      const params = useParams();
      const history = useHistory();
+     const Tasks = localStorage.getItem('Tasks')
+     const objTasks = JSON.parse(Tasks)
+     const task = objTasks.find(task => task.title===params.taskTitle)
 
      const handleBackButtonClick = () =>{
          history.goBack();
@@ -18,8 +21,8 @@ import './TaskDetails.css'
                 <Button onClick={handleBackButtonClick}>Voltar</Button>
             </div>
             <div className="task-details-container">
-                <h2>{params.taskTitle}</h2>
-                <p>{params.taskDescription}</p>
+                <h2>{task.title}</h2>
+                <p>{task.description}</p>
             </div>
          </>
       );
