@@ -30,6 +30,7 @@ const App =()=>{
       return task;
     });
     setTasks(newTasks)
+    localStorage.setItem('Tasks', JSON.stringify(newTasks))
   }
 
   const handleTaskAddition = (taskTitle) => {
@@ -39,7 +40,7 @@ const App =()=>{
       title: taskTitle,
       id: uuidv4(),
       completed: false,
-      description: '',
+      description: 'Write a description for the task.',
       },
     ];
     setTasks(newTasks);
@@ -72,13 +73,12 @@ const App =()=>{
         )}
       />
       <Route
-        path="/:taskTitle"
+        path="/:taskID"
         exact
         component={TaskDetails} 
       />
     </div>
     </Router>
-    
   )
 }
 

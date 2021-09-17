@@ -10,8 +10,8 @@ import './TaskDetails.css'
      const history = useHistory();
      const Tasks = localStorage.getItem('Tasks')
      const objTasks = JSON.parse(Tasks)
-     const task = objTasks.find(task => task.title===params.taskTitle)
-
+     const task = objTasks.find(task => task.id===params.taskID)
+     
      const handleBackButtonClick = () =>{
          history.goBack();
      }
