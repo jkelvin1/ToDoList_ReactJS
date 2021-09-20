@@ -37,8 +37,8 @@ const App =()=>{
     const newTasks = [ 
       ...tasks, 
       {
-      title: taskTitle,
       id: uuidv4(),
+      title: taskTitle ? taskTitle : "Untitled",
       completed: false,
       description: 'Write a description for the task.',
       },
@@ -65,7 +65,7 @@ const App =()=>{
           <>  
             <AddTask handleTaskAddition = {handleTaskAddition}/>
             <Tasks 
-              tasks = {tasks}
+              tasks = {JSON.parse(localStorage.getItem('Tasks'))}
               handleTaskClick={handleTaskClick}
               handleTaskDeletion={handleTaskDeletion}
               />

@@ -17,3 +17,17 @@
     width: 30%;
     margin-top: 10px;
 }
+
+.edit-button-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-task-description-button{
+    background-color: #444;
+    border: none;
+    font-size: 24px;
+    color: steelblue;
+    margin: 0 5px;
+    cursor: pointer;
+}

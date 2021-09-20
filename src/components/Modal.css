@@ -1,0 +1,37 @@
+.inputs-modal-container{
+    background-color: #444;
+    margin: 15px 0;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    color: #eee;
+    border-radius: 5px;
+}
+
+.inputs-modal-container h2{
+    color: steelblue;
+    margin-top: 15px;
+    margin-bottom: -15px;
+}
+
+.inputs-modal-container input{
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    flex: 2;
+    background-color: #eee;
+    color: #000;
+    font-size: 16px;
+}
+
+.buttons-modal-container{
+    margin-top: 10px;
+    margin-left: 260px;
+    width: 40%;
+    display: flex;
+}
+
+.buttons-modal-container Button{
+    margin-left: 10px;
+}
