@@ -24,7 +24,7 @@ const App =()=>{
   }, [])
 
   const handleTaskClick = (taskID) => {
-    const newTasks = tasks.map(task =>{
+    const newTasks = JSON.parse(localStorage.getItem('Tasks')).map(task =>{
       if (task.id === taskID) return {...task, completed: !task.completed}
 
       return task;
@@ -35,7 +35,7 @@ const App =()=>{
 
   const handleTaskAddition = (taskTitle) => {
     const newTasks = [ 
-      ...tasks, 
+      ...JSON.parse(localStorage.getItem('Tasks')), 
       {
       id: uuidv4(),
       title: taskTitle ? taskTitle : "Untitled",
@@ -48,7 +48,7 @@ const App =()=>{
   }
 
   const handleTaskDeletion = (taskID) => {
-    const newTasks = tasks.filter(task => task.id !== taskID)
+    const newTasks = JSON.parse(localStorage.getItem('Tasks')).filter(task => task.id !== taskID)
 
     setTasks(newTasks)
     localStorage.setItem('Tasks', JSON.stringify(newTasks))
